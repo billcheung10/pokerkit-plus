@@ -1,0 +1,34 @@
+[project]
+name = "pokerkit-plus"
+version = "0.0.1"
+description = "PokerKit Plus — fork-free capability extensions on top of PokerKit; a drop-in superset of pokerkit."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "PokerKit Plus contributors" }]
+keywords = ["poker", "pokerkit", "equity", "solver", "holdem", "omaha"]
+dependencies = [
+    # Pinned: PokerKit Plus rides on a known-good pokerkit and bumps deliberately.
+    "pokerkit==0.7.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "mypy>=1.11", "ruff>=0.7"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["pokerkit_plus"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
