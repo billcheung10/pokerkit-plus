@@ -57,6 +57,7 @@ from pokerkit_plus.tags import (  # noqa: F401
     TwoPairTier,
 )
 from pokerkit_plus.outs import Outs  # noqa: F401
+from pokerkit_plus.blockers import BlockerReport  # noqa: F401
 from pokerkit_plus.facade import (  # noqa: F401
     BoardReport,
     HandReport,
@@ -99,6 +100,8 @@ _PLUS_ALL: tuple[str, ...] = (
     'TwoPairTier',
     # outs
     'Outs',
+    # blockers
+    'BlockerReport',
     # facade
     'BoardReport',
     'HandReport',
