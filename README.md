@@ -13,6 +13,10 @@ from pokerkit_plus import NoLimitTexasHoldem, Automation, State   # all of poker
 # ...plus the PokerKit Plus additions as they land.
 ```
 
+**Usage guide:** [`docs/USAGE.md`](docs/USAGE.md) documents every added
+function — its business meaning and a runnable example (all examples are
+doctested in CI).
+
 ## Design
 
 - **Form:** standalone extension package, `pip`-depends on `pokerkit==0.7.3` (pinned).
