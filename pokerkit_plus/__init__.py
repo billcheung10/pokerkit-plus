@@ -58,6 +58,17 @@ from pokerkit_plus.tags import (  # noqa: F401
 )
 from pokerkit_plus.outs import Outs  # noqa: F401
 from pokerkit_plus.blockers import BlockerReport  # noqa: F401
+from pokerkit_plus.ranges import (  # noqa: F401
+    Advantage,
+    AdvantageBasis,
+    Aggression,
+    AGGRESSION_ORDER,
+    ComboClass,
+    build_value_range,
+    calculate_range_advantage,
+    expand_range,
+    nut_advantage,
+)
 from pokerkit_plus.facade import (  # noqa: F401
     BoardReport,
     HandReport,
@@ -102,6 +113,16 @@ _PLUS_ALL: tuple[str, ...] = (
     'Outs',
     # blockers
     'BlockerReport',
+    # ranges
+    'Advantage',
+    'AdvantageBasis',
+    'Aggression',
+    'AGGRESSION_ORDER',
+    'ComboClass',
+    'build_value_range',
+    'calculate_range_advantage',
+    'expand_range',
+    'nut_advantage',
     # facade
     'BoardReport',
     'HandReport',

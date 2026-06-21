@@ -38,14 +38,19 @@ capabilities):
 - `pokerkit_plus.tags` — `HandTier.from_hand` (made-hand tier + `labels()`)
   with `PairTier`/`KickerTier`/`TwoPairTier`/`ThreeOfAKindTier`.
 - `pokerkit_plus.outs` — `Outs.from_hand` (category-upgrade outs, grouped).
+- `pokerkit_plus.blockers` — `BlockerReport.from_hand` (count-based: how many
+  of the board's nut combos a holding removes).
+- `pokerkit_plus.ranges` — `ComboClass`/`expand_range` (notation),
+  `build_value_range`, `calculate_range_advantage` (Monte-Carlo equity), and
+  `nut_advantage` (exact nut-category share).
 - `pokerkit_plus.facade` — `HandReport.from_hand` and `BoardReport.from_board`,
   the one-call composed entry points for callers wanting a complete reading.
 
 Built on pokerkit's lookup-table total order (no hand-rolled scoring); every
-per-board / per-hand enumeration is memoized. Verified: mypy `--strict` clean,
-ruff clean, unit tests + doctests green, `Nuts`/`Outs` match a brute-force
-oracle on random hands, and a 2000-hand sweep shows no `is_nut`/`nut_rank`
-contradictions. Blocker analysis and a range/advantage module are planned next.
+per-board / per-hand enumeration is memoized, and equity is delegated to
+pokerkit's Monte-Carlo sampler. Verified: mypy `--strict` clean, ruff clean,
+unit tests + doctests green, `Nuts`/`Outs`/blockers match brute-force oracles,
+and a 2000-hand sweep shows no `is_nut`/`nut_rank` contradictions.
 
 ### Candidate capabilities (menu, not yet scheduled)
 
